@@ -33,5 +33,45 @@ namespace TH_ADP_Nhom3
             main.Show();
             this.Hide();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            float chieuDai;
+            float chieuRong;
+
+            // Kiểm tra người dùng nhập vào chiều dài và chiều rộng có phải là số và lớn hơn 0
+            if (float.TryParse(txt_Chieudai.Text, out chieuDai) && chieuDai > 0 &&
+                float.TryParse(txt_Chieurong.Text, out chieuRong) && chieuRong > 0)
+            {
+                // Tính diện tích
+                float dienTich = chieuDai * chieuRong;
+
+                // Hiển thị kết quả
+                txt_Ketqua.Text = dienTich.ToString();
+            }
+            else
+            {
+                MessageBox.Show("Nhập sai");
+                txt_Chieudai.Clear();
+                txt_Chieurong.Clear();
+                txt_Ketqua.Clear();
+            }
+
+        }
+
+        private void txt_Chieudai_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txt_Chieurong_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txt_Ketqua_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

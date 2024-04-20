@@ -23,5 +23,31 @@ namespace TH_ADP_Nhom3
             main.Show();
             this.Hide();
         }
+
+        private void txt_Ketqua_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txt_Chuoi_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txt_Tinh_Click(object sender, EventArgs e)
+        {
+            // Đọc chuỗi từ TextBox txt_Chuoi
+            string input = txt_Chuoi.Text;
+
+            // Tách các từ trong chuỗi và loại bỏ các khoảng trắng thừa
+            string[] words = input.Trim().Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+
+            // Đếm số từ trong mảng words
+            int wordCount = words.Length;
+
+            // Hiển thị kết quả đếm trên TextBox txt_Ketqua
+            txt_Ketqua.Text = $"Chuỗi đó có {wordCount} từ";
+        }
+
     }
 }
